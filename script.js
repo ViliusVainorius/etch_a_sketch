@@ -31,6 +31,27 @@ function generateNewGrid(sqrAmount = 16) {
 
 function configureDiv(div, sqrAmount) {
   const percentagePerSquare = 100 / sqrAmount;
-  console.log(percentagePerSquare);
   div.style.flexBasis = `${percentagePerSquare}%`;
+
+  div.dataset.darkness = 0;
+
+  div.addEventListener("mouseenter", () => {
+    let currentDarkness = Number(div.dataset.darkness);
+    if (currentDarkness < 10) {
+      currentDarkness += 1;
+      div.dataset.darkness = currentDarkness;
+      let opacityValue = currentDarkness * 0.1;
+
+      div.style.backgroundColor = getRandomColor(opacityValue);
+    }
+  });
+}
+
+function getRandomColor(opacityValue) {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+
+  const color = `rgba(${r}, ${g}, ${b}, ${opacityValue})`;
+  return color;
 }

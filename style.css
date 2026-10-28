@@ -1,12 +1,21 @@
 body {
-  background-color: black;
-  color: white;
   margin: 0;
+  font-family: system-ui;
+  font-size: 16px;
 }
 
 #changeCanvas {
   display: block;
   margin: auto;
+  background-color: rgb(233, 231, 231);
+  height: 30px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#changeCanvas:hover {
+  background-color: rgb(255, 255, 255);
 }
 
 .container {
@@ -15,13 +24,10 @@ body {
   flex-wrap: wrap;
   width: 70vh;
   height: 70vh;
+  border: 1px solid grey;
 }
 
 .container div {
   background-color: white;
   box-sizing: border-box;
-}
-
-.container div:hover {
-  background-color: limegreen;
 }
