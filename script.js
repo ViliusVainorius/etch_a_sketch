@@ -11,6 +11,8 @@ btn.addEventListener("click", () => {
     removeOldGrid();
     //generate new grid
     generateNewGrid(sqrAmount);
+  } else {
+    alert("Please provide a number from 1 to 100! :)");
   }
 });
 
